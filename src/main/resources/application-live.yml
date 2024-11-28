@@ -1,0 +1,45 @@
+localIp: 13.214.8.167
+#targetDBIp: 13.214.8.167
+server:
+  port: 8025
+  tomcat:
+    threads:
+      max: 20
+spring:
+  cache:
+    type: redis
+    redis:
+      time-to-live: 3600000
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password: Wtd888888
+      lettuce.pool.max-active: 8
+      lettuce.pool.max-wait: -1ms
+  output:
+    ansi:
+      enabled: ALWAYS
+  main:
+    allow-bean-definition-overriding: true
+    banner-mode: off
+  servlet:
+    multipart:
+      max-request-size: 200MB
+      max-file-size: 500MB
+# Application Setting
+#appsConf:
+#  tokenLength: 4
+cache:
+  default:
+    expire-time-minutes: 60
+myapp:
+  serverIp: ${localIp}
+  allowIps: localhost:5003, localhost:5005, localhost:5013, 192.168.1.50
+#  localIp: 192.168.1.50
+#  localIp1: 18.136.127.46
+#  localIp2: fms.topfruits.tech
+# Server directory
+MEDIA_PATH: /home/ubuntu/application/media/
+TEMP_MEDIA_PATH: /home/ubuntu/application/temp/
+# FOLDER_PATHS: "1-category/,2-category/,3-category/,4-category/"
