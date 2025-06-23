@@ -25,7 +25,7 @@ import java.util.List;
 @RestController
 @Import(ControllerMessageConverterConfig.class)
 @JsonAutoDetect(getterVisibility = JsonAutoDetect.Visibility.NONE)
-@RequestMapping("/api-upload/upload")
+@RequestMapping("/upload")
 public class UploadController {
     @Value("${TEMP_MEDIA_PATH}")
     private String tempPath;
@@ -44,7 +44,9 @@ public class UploadController {
     //        return handlePhotoUpload(file, null);
     @PostMapping("/video")
     public R<UploadResultVo> uploadVideo(@RequestParam("file") MultipartFile file) {
-        return handleUpload(file, ".mp4", ALLOWED_VIDEO_EXTENSIONS, false, null);
+        // setting get need Compress
+        return handleUpload(file, ".mp4", ALLOWED_VIDEO_EXTENSIONS, true, null);
+//        return handleUpload(file, ".mp4", ALLOWED_VIDEO_EXTENSIONS, false, null);
     }
 
     @PostMapping("/video-compress")
