@@ -36,6 +36,13 @@ public class UploadController {
     private static final List<String> ALLOWED_IMG_EXTENSIONS = Arrays.asList(".jpg", ".jpeg", ".png");
     private static final List<String> ALLOWED_VIDEO_EXTENSIONS = Arrays.asList(".mp4", ".mov", ".3gp", ".avi");
 
+    private static final List<String> ALLOWED_FILE_EXTENSIONS = Arrays.asList(".jpg", ".jpeg", ".png", ".pdf", ".doc", ".docx", ".xls", ".xlsx", ".txt");
+
+    @PostMapping("/file")
+    public R<UploadResultVo> uploadFile(@RequestParam("file") MultipartFile file) {
+        return handleUpload(file, null, ALLOWED_FILE_EXTENSIONS, false, null);
+    }
+
     @PostMapping("/photo")
     public R<UploadResultVo> uploadPhoto(@RequestParam("file") MultipartFile file) {
         return handleUpload(file, ".jpg", ALLOWED_IMG_EXTENSIONS, false, null);
