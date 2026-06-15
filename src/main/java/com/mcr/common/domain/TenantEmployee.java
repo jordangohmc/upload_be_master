@@ -1,4 +1,4 @@
-package com.mcr.common.entity;
+package com.mcr.common.domain;
 
 import lombok.Data;
 

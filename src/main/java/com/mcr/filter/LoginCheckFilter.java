@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.mcr.common.AppConfig;
 import com.mcr.common.BaseContext;
 import com.mcr.common.R;
-import com.mcr.common.entity.TenantEmployee;
+import com.mcr.common.domain.TenantEmployee;
 import com.mcr.framework.config.cache.RedisUtils;
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
